@@ -1,7 +1,8 @@
-
 import './App.css';
 import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';  
 import Login from './Components/Login'; 
+import ProtectedRoute from './Components/ProtectedRoute';
+import FriendsList from './Components/FriendsList';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
 
         <Switch>
           <Route  exact path="/login" component={Login}/>
+          <ProtectedRoute exact path="/protected" component={FriendsList}/>
+          <Route component={Login}/>
           
         </Switch>
 
