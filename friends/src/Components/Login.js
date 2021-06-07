@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router';
 import axios from 'axios'; 
+import FriendsList from './FriendsList'; 
 
 
 const Login = () => {
+const history = useHistory()
 
 const formCredentials = {
     username: '',
@@ -20,7 +23,9 @@ const credentialsSubmit = (e) => {
    e.preventDefault();
    axios.post('http://localhost:5000/api/login', credentials)
    .then(res => {
-       console.log(res.data)
+       console.log(res.data.payload)
+       localStorage.setItem('token',res.data.payload)
+       history.push('/friendslist')
    })
    .catch(err => {
        console.log(err)

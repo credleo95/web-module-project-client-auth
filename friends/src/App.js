@@ -1,8 +1,8 @@
 import React from 'react'; 
 import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'; 
 import axios from 'axios'; 
-import login from './Components/Login'; 
-
+import Login from './Components/Login'; 
+import FriendsList from './Components/FriendsList';
 import './App.css';
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
       <Router>
         <Link to='/login'>Login</Link>
         <Switch>
-          <Route path='/login' component={login}/>
+          <Route path='/login' component={Login}/>
+          <Route exact path='/friendslist'component={FriendsList}/>
         </Switch>
       </Router>
     </div>
