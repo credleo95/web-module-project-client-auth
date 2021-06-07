@@ -7,10 +7,19 @@ import PrivateRoute from './Components/PrivateRoute';
 import './App.css';
 
 function App() {
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    window.location.href='/login'; 
+  }
+
   return (
     <div className="App">
       <Router>
-        <Link to='/login'>Login</Link>
+        <Link to='/login'>Log-in</Link>
+        &nbsp;
+        &nbsp;
+        <Link onClick={logout}>Log out</Link>
         <Switch>
           <Route path='/login' component={Login}/>
           <PrivateRoute exact path='/friendslist'component={FriendsList}/>
