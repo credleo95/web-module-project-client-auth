@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios'; 
 import Login from './Components/Login'; 
 import FriendsList from './Components/FriendsList';
+import PrivateRoute from './Components/PrivateRoute'; 
 import './App.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Link to='/login'>Login</Link>
         <Switch>
           <Route path='/login' component={Login}/>
-          <Route exact path='/friendslist'component={FriendsList}/>
+          <PrivateRoute exact path='/friendslist'component={FriendsList}/>
         </Switch>
       </Router>
     </div>

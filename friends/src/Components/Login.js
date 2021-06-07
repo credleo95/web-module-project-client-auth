@@ -21,7 +21,7 @@ setCredentials({...credentials,[e.target.name]:e.target.value})
 
 const credentialsSubmit = (e) => {
    e.preventDefault();
-   axios.post('http://localhost:5000/api/login', credentials)
+   axios.post('http://localhost:5000/api/login', credentials) // username: Lambda School password: i<3Lambd4
    .then(res => {
        console.log(res.data.payload)
        localStorage.setItem('token',res.data.payload)
