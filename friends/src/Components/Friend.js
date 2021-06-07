@@ -6,7 +6,7 @@ const Friend = (props) => {
  const email= props.friend.email
  const age = props.friend.age
     return(
-        <div>
+        <div className="friend-container">
             <p>name: {name} </p>
             <br />
             <p>email:{email} </p>
